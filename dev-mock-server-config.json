@@ -1,96 +1,402 @@
 {
-    "port": 3001,
-    "host": "0.0.0.0",
-    "authorization": {
-        "type": "headers"
+  "port": 3001,
+  "host": "0.0.0.0",
+  "authorization": {
+    "type": "headers"
+  },
+  "api": [
+    {
+      "method": "GET",
+      "path": "/api/v1/getAllMatches",
+      "response": {
+        "success": true,
+        "matches": [
+          {
+            "matchDate": "14 June",
+            "stadium": "Munich",
+            "homeTeam": "Germany",
+            "awayTeam": "Scotland",
+            "matchPlayed": true,
+            "homeTeamScore": 5,
+            "awayTeamScore": 1,
+            "group": "A"
+          },
+          {
+            "matchDate": "15 June",
+            "stadium": "Cologne",
+            "homeTeam": "Hungary",
+            "awayTeam": "Switzerland",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 3,
+            "group": "A"
+          },
+          {
+            "matchDate": "15 June",
+            "stadium": "Berlin",
+            "homeTeam": "Spain",
+            "awayTeam": "Croatia",
+            "matchPlayed": true,
+            "homeTeamScore": 3,
+            "awayTeamScore": 0,
+            "group": "B"
+          },
+          {
+            "matchDate": "15 June",
+            "stadium": "Dortmund",
+            "homeTeam": "Italy",
+            "awayTeam": "Albania",
+            "matchPlayed": true,
+            "homeTeamScore": 2,
+            "awayTeamScore": 1,
+            "group": "B"
+          },
+          {
+            "matchDate": "16 June",
+            "stadium": "Hamburg",
+            "homeTeam": "Poland",
+            "awayTeam": "Netherlands",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 2,
+            "group": "D"
+          },
+          {
+            "matchDate": "16 June",
+            "stadium": "Stuttgart",
+            "homeTeam": "Slovenia",
+            "awayTeam": "Denmark",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 1,
+            "group": "C"
+          },
+          {
+            "matchDate": "16 June",
+            "stadium": "Gelsenkirchen",
+            "homeTeam": "Serbia",
+            "awayTeam": "England",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 1,
+            "group": "C"
+          },
+          {
+            "matchDate": "17 June",
+            "stadium": "Munich",
+            "homeTeam": "Romania",
+            "awayTeam": "Ukraine",
+            "matchPlayed": true,
+            "homeTeamScore": 3,
+            "awayTeamScore": 0,
+            "group": "E"
+          },
+          {
+            "matchDate": "17 June",
+            "stadium": "Frankfurt",
+            "homeTeam": "Belgium",
+            "awayTeam": "Slovakia",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 1,
+            "group": "E"
+          },
+          {
+            "matchDate": "17 June",
+            "stadium": "Düsseldorf",
+            "homeTeam": "Austria",
+            "awayTeam": "France",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 1,
+            "group": "D"
+          },
+          {
+            "matchDate": "18 June",
+            "stadium": "Dortmund",
+            "homeTeam": "Türkiye",
+            "awayTeam": "Georgia",
+            "matchPlayed": true,
+            "homeTeamScore": 3,
+            "awayTeamScore": 1,
+            "group": "F"
+          },
+          {
+            "matchDate": "18 June",
+            "stadium": "Leipzig",
+            "homeTeam": "Portugal",
+            "awayTeam": "Czechia",
+            "matchPlayed": true,
+            "homeTeamScore": 2,
+            "awayTeamScore": 1,
+            "group": "F"
+          },
+          {
+            "matchDate": "19 June",
+            "stadium": "Hamburg",
+            "homeTeam": "Croatia",
+            "awayTeam": "Albania",
+            "matchPlayed": true,
+            "homeTeamScore": 2,
+            "awayTeamScore": 2,
+            "group": "B"
+          },
+          {
+            "matchDate": "19 June",
+            "stadium": "Stuttgart",
+            "homeTeam": "Germany",
+            "awayTeam": "Hungary",
+            "matchPlayed": true,
+            "homeTeamScore": 2,
+            "awayTeamScore": 0,
+            "group": "A"
+          },
+          {
+            "matchDate": "19 June",
+            "stadium": "Cologne",
+            "homeTeam": "Scotland",
+            "awayTeam": "Switzerland",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 1,
+            "group": "A"
+          },
+          {
+            "matchDate": "20 June",
+            "stadium": "Munich",
+            "homeTeam": "Slovenia",
+            "awayTeam": "Serbia",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 1,
+            "group": "C"
+          },
+          {
+            "matchDate": "20 June",
+            "stadium": "Frankfurt",
+            "homeTeam": "Denmark",
+            "awayTeam": "England",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 1,
+            "group": "C"
+          },
+          {
+            "matchDate": "20 June",
+            "stadium": "Gelsenkirchen",
+            "homeTeam": "Spain",
+            "awayTeam": "Italy",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 0,
+            "group": "B"
+          },
+          {
+            "matchDate": "21 June",
+            "stadium": "Düsseldorf",
+            "homeTeam": "Slovakia",
+            "awayTeam": "Ukraine",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 2,
+            "group": "E"
+          },
+          {
+            "matchDate": "21 June",
+            "stadium": "Berlin",
+            "homeTeam": "Poland",
+            "awayTeam": "Austria",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 3,
+            "group": "D"
+          },
+          {
+            "matchDate": "21 June",
+            "stadium": "Leipzig",
+            "homeTeam": "Netherlands",
+            "awayTeam": "France",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0,
+            "group": "D"
+          },
+          {
+            "matchDate": "22 June",
+            "stadium": "Hamburg",
+            "homeTeam": "Georgia",
+            "awayTeam": "Czechia",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 1,
+            "group": "F"
+          },
+          {
+            "matchDate": "22 June",
+            "stadium": "Dortmund",
+            "homeTeam": "Türkiye",
+            "awayTeam": "Portugal",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 3,
+            "group": "F"
+          },
+          {
+            "matchDate": "22 June",
+            "stadium": "Cologne",
+            "homeTeam": "Belgium",
+            "awayTeam": "Romania",
+            "matchPlayed": true,
+            "homeTeamScore": 2,
+            "awayTeamScore": 0,
+            "group": "E"
+          },
+          {
+            "matchDate": "23 June",
+            "stadium": "Frankfurt",
+            "homeTeam": "Switzerland",
+            "awayTeam": "Germany",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 1,
+            "group": "A"
+          },
+          {
+            "matchDate": "23 June",
+            "stadium": "Stuttgart",
+            "homeTeam": "Scotland",
+            "awayTeam": "Hungary",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 1,
+            "group": "A"
+          },
+          {
+            "matchDate": "24 June",
+            "stadium": "Leipzig",
+            "homeTeam": "Croatia",
+            "awayTeam": "Italy",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 1,
+            "group": "B"
+          },
+          {
+            "matchDate": "24 June",
+            "stadium": "Düsseldorf",
+            "homeTeam": "Albania",
+            "awayTeam": "Spain",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 1,
+            "group": "B"
+          },
+          {
+            "matchDate": "25 June",
+            "stadium": "Berlin",
+            "homeTeam": "Netherlands",
+            "awayTeam": "Austria",
+            "matchPlayed": true,
+            "homeTeamScore": 2,
+            "awayTeamScore": 3,
+            "group": "D"
+          },
+          {
+            "matchDate": "25 June",
+            "stadium": "Dortmund",
+            "homeTeam": "France",
+            "awayTeam": "Poland",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 1,
+            "group": "D"
+          },
+          {
+            "matchDate": "25 June",
+            "stadium": "Cologne",
+            "homeTeam": "England",
+            "awayTeam": "Slovenia",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0,
+            "group": "C"
+          },
+          {
+            "matchDate": "25 June",
+            "stadium": "Munich",
+            "homeTeam": "Denmark",
+            "awayTeam": "Serbia",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0,
+            "group": "C"
+          },
+          {
+            "matchDate": "26 June",
+            "stadium": "Frankfurt",
+            "homeTeam": "Slovakia",
+            "awayTeam": "Romania",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 1,
+            "group": "E"
+          },
+          {
+            "matchDate": "26 June",
+            "stadium": "Stuttgart",
+            "homeTeam": "Ukraine",
+            "awayTeam": "Belgium",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0,
+            "group": "E"
+          },
+          {
+            "matchDate": "26 June",
+            "stadium": "Hamburg",
+            "homeTeam": "Czechia",
+            "awayTeam": "Türkiye",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 2,
+            "group": "F"
+          },
+          {
+            "matchDate": "26 June",
+            "stadium": "Gelsenkirchen",
+            "homeTeam": "Georgia",
+            "awayTeam": "Portugal",
+            "matchPlayed": true,
+            "homeTeamScore": 2,
+            "awayTeamScore": 0,
+            "group": "F"
+          }
+        ]
+      },
+      "authorization": {
+        "unauthorized": {
+          "success": false,
+          "error": "Unauthorized Access."
+        },
+        "status": 401,
+        "token": "YuHBdSlDXY000xa8IlCm7Qgq4_s"
+      }
     },
-    "api": [
-        {
-            "method": "GET",
-            "path": "/api/v1/getAllMatches",
-            "response": {
-                "success": true,
-                "matches": [
-                    {
-                        "matchDate": 1651744228685,
-                        "stadium": "Maracanã",
-                        "homeTeam": "Brazil",
-                        "awayTeam": "Serbia",
-                        "matchPlayed": true,
-                        "homeTeamScore": 1,
-                        "awayTeamScore": 0
-                    },
-                    {
-                        "matchDate": 1651744228685,
-                        "stadium": "Stade de Suisse",
-                        "homeTeam": "Switzerland",
-                        "awayTeam": "Serbia",
-                        "matchPlayed": true,
-                        "homeTeamScore": 2,
-                        "awayTeamScore": 2
-                    },
-                    {
-                        "matchDate": 1651744228685,
-                        "stadium": "Stadion Rajko Mitic",
-                        "homeTeam": "Serbia",
-                        "awayTeam": "Cameroon",
-                        "matchPlayed": true,
-                        "homeTeamScore": 0,
-                        "awayTeamScore": 1
-                    },
-                    {
-                        "matchDate": 1651744228685,
-                        "stadium": "Maracanã",
-                        "homeTeam": "Brazil",
-                        "awayTeam": "Switzerland",
-                        "matchPlayed": true,
-                        "homeTeamScore": 3,
-                        "awayTeamScore": 0
-                    },
-                    {
-                        "matchDate": 1651744228685,
-                        "stadium": "Maracanã",
-                        "homeTeam": "Brazil",
-                        "awayTeam": "Cameroon",
-                        "matchPlayed": true,
-                        "homeTeamScore": 4,
-                        "awayTeamScore": 4
-                    },
-                    {
-                        "matchDate": 1651744228685,
-                        "stadium": "Stade de Suisse",
-                        "homeTeam": "Switzerland",
-                        "awayTeam": "Cameroon",
-                        "matchPlayed": true,
-                        "homeTeamScore": 2,
-                        "awayTeamScore": 2
-                    }
-                ]
-            },
-            "authorization": {
-                "unauthorized": {
-                    "success": false,
-                    "error": "Unauthorized Access."
-                },
-                "status": 401,
-                "token": "YuHBdSlDXY000xa8IlCm7Qgq4_s"
-            }
-        },
-        {
-            "method": "GET",
-            "path": "/api/v1/getAccessToken",
-            "response": {
-                "success": true,
-                "access_token": "YuHBdSlDXY000xa8IlCm7Qgq4_s"
-            }
-        },
-        {
-            "method": "GET",
-            "path": "/api/version",
-            "response": {
-                "success": true,
-                "version": "1.0"
-            }
-        }
-    ]
+    {
+      "method": "GET",
+      "path": "/api/v1/getAccessToken",
+      "response": {
+        "success": true,
+        "access_token": "YuHBdSlDXY000xa8IlCm7Qgq4_s"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/version",
+      "response": {
+        "success": true,
+        "version": "1.0"
+      }
+    }
+  ]
 }
