@@ -63,9 +63,9 @@ class LeagueService {
    *
    * @returns {Array} List of teams representing the leaderboard.
    */
-  getLeaderboard() {
+  getLeaderboard(group = "A") {
     const teamsArray = [];
-    for (const match of this.matches) {
+    for (const match of this.matches.filter((m) => m.group === group)) {
       if (!teamsArray[match.homeTeam]) {
         teamsArray[match.homeTeam] = {
           teamName: match.homeTeam,

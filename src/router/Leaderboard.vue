@@ -2,31 +2,38 @@
     <h1>League Standings</h1>
     <section class="content">
         <p v-if="leaderboard.length < 1" class="no-data">There are standings</p>
-        <table v-else>
-            <thead>
-                <tr>
-                    <td class="team">Team Name</td>
-                    <td>MP</td>
-                    <td>GF</td>
-                    <td>GA</td>
-                    <td>Points</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(team, index) in leaderboard" :key="index">
-                    <td class="team">
-                        <div>
-                            <img :src=getImageURL(team.teamName) class="team-img" />
-                            {{ team.teamName }}
-                        </div>
-                    </td>
-                    <td>{{ team.matchesPlayed }}</td>
-                    <td>{{ team.goalsFor }}</td>
-                    <td>{{ team.goalsAgainst }}</td>
-                    <td>{{ team.points }}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div v-else>
+            <select @change="changeGroup($event)" class="group-select">
+                <option v-for="group of  groups " v-bind:key="group" :value="group">
+                    Group {{ group }}
+                </option>
+            </select>
+            <table>
+                <thead>
+                    <tr>
+                        <td class="team">Team Name</td>
+                        <td>MP</td>
+                        <td>GF</td>
+                        <td>GA</td>
+                        <td>Points</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(team, index) in leaderboard" :key="index">
+                        <td class="team">
+                            <div>
+                                <img :src=getImageURL(team.teamName) class="team-img" />
+                                {{ team.teamName }}
+                            </div>
+                        </td>
+                        <td>{{ team.matchesPlayed }}</td>
+                        <td>{{ team.goalsFor }}</td>
+                        <td>{{ team.goalsAgainst }}</td>
+                        <td>{{ team.points }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 </template>
 
@@ -34,16 +41,27 @@
 import { onMounted, ref } from 'vue';
 import LeagueService from '../services/LeagueService';
 
+const leagueService = new LeagueService();
+
 let leaderboard = ref([]);
+let selectedGroup = ref('A');
+let groups = ref([]);
 
 function getImageURL(team) {
     return `https://flagsapi.codeaid.io/${team}.png`;
 }
 
+function changeGroup(event) {
+    selectedGroup.value = event.target.value;
+    leaderboard.value = leagueService.getLeaderboard(selectedGroup.value);
+}
+
 onMounted(async () => {
-    const leagueService = new LeagueService();
     await leagueService.fetchData();
-    leaderboard.value = leagueService.getLeaderboard();
+
+    groups.value = leagueService.getGroups();
+
+    leaderboard.value = leagueService.getLeaderboard(selectedGroup.value);
 });
 </script>
 
@@ -60,11 +78,12 @@ h1 {
 }
 
 .content {
-    width: 100%;
+    width: 90%;
+    margin: auto;
 }
 
 .content table {
-    width: 90%;
+    width: 100%;
     margin: auto;
     border-spacing: 0;
     text-align: left;
@@ -95,6 +114,11 @@ h1 {
 
 .content tbody tr td {
     border-top: 1px solid #E4EDF2;
+}
+
+.content tbody tr td:last-child {
+    color: #0d39b2;
+    font-weight: bolder;
 }
 
 .content tbody tr:first-child td {
