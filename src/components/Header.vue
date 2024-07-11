@@ -5,6 +5,10 @@
                 <img src="images/logo.svg" />
             </router-link>
             <div class="menu">
+                <router-link to="/groups">
+                    <img src="images/groups.png" />
+                    Groups
+                </router-link>
                 <router-link to="/schedule">
                     <img src="images/schedule.png" />
                     Schedule

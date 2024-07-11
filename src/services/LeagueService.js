@@ -173,6 +173,12 @@ class LeagueService {
       });
     this.setMatches(matches);
   }
+
+  getGroups() {
+    let allGroups = this.matches.map((m) => m.group);
+    const groups = [...new Set(allGroups)];
+    return groups.sort();
+  }
 }
 
 function getHeadToHeadMatches(matches, teamA, teamB) {

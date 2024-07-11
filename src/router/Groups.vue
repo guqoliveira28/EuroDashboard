@@ -3,8 +3,10 @@
     <section class="content">
         <p v-if="matches.length < 1" class="no-data">There are no scheduled matches</p>
         <div v-else>
-            <select>
-                <option v-for="group of groups" v-bind:key="group">{{ group }}</option>
+            <select @change="changeGroup($event)" class="group-select">
+                <option v-for="group of  groups " v-bind:key="group" :value="group">
+                    Group {{ group }}
+                </option>
             </select>
             <table>
                 <thead>
@@ -17,7 +19,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(match, index) in matches" :key="index">
+                    <tr v-for="( match, index ) in  matches " :key="index">
                         <td class="date-time" v-if="width >= 500">
                             <div>{{ formatDate(new Date(match.matchDate)) }}</div>
                             <div>{{ formatTime(new Date(match.matchDate)) }}</div>
@@ -54,6 +56,7 @@
 import { onMounted, ref } from 'vue';
 import LeagueService from '../services/LeagueService';
 
+let allMatches = [];
 let matches = ref([]);
 let selectedGroup = ref('A');
 let groups = ref([]);
@@ -71,12 +74,17 @@ function getImageURL(team) {
     return `https://flagsapi.codeaid.io/${team}.png`;
 }
 
+function changeGroup(event) {
+    selectedGroup.value = event.target.value;
+    matches.value = allMatches.filter(m => m.group === selectedGroup.value);
+}
+
 onMounted(async () => {
     const leagueService = new LeagueService();
     await leagueService.fetchData();
-    matches.value = leagueService.getMatches();
-    let allGroups = matches.value.map((m) => m.group);
-    groups.value = [... new Set(allGroups)];
+    allMatches = leagueService.getMatches();
+    groups.value = leagueService.getGroups();
+    matches.value = allMatches.filter(m => m.group === selectedGroup.value);
     window.addEventListener('resize', () => {
         width.value = window.innerWidth;
     });
@@ -95,12 +103,25 @@ h1 {
     margin: 0 20px;
 }
 
+.group-select {
+    background-color: #F6F7F7;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+.group-select::-ms-expand {
+    display: none;
+}
+
 .content {
-    width: 100%;
+    width: 90%;
+    margin: auto;
 }
 
 .content table {
-    width: 90%;
+    width: 100%;
     margin: auto;
     border-spacing: 0;
     text-align: left;
