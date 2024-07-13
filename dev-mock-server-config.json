@@ -12,7 +12,7 @@
         "success": true,
         "matches": [
           {
-            "matchDate": "1718395200000",
+            "matchDate": 1718395200000,
             "stadium": "Munich",
             "homeTeam": "Germany",
             "awayTeam": "Scotland",
